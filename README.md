@@ -4,4 +4,4 @@
 
 You should put the video, ffmpeg, and ffprobe files like in this screen shot.
 
-![image](https://github.com/user-attachments/assets/a022b702-6252-480e-9d1e-51112d021cd5)
+![image](https://github.com/user-attachments/assets/3f0f7aaf-5c96-4fde-be72-820ef0150dab)
