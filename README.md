@@ -1,6 +1,6 @@
 ## Video Extender
 
-**Extend Video Infinitely Without Encoding Easily and Quickly**
+**Extend Video Infinitely Without Encoding Easily and Quickly.**
 
 You should put the video, ffmpeg, and ffprobe files like in this screen shot.
 
