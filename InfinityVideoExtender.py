@@ -68,6 +68,8 @@ class VideoExtenderWorker(QThread):
 
     def run(self):
         try:
+            from subprocess import CREATE_NO_WINDOW
+            
             ffprobe_path = os.path.join(self.ffmpeg_path, "ffprobe.exe")
             duration_cmd = [
                 ffprobe_path, '-v', 'error',
@@ -75,7 +77,11 @@ class VideoExtenderWorker(QThread):
                 '-of', 'default=noprint_wrappers=1:nokey=1',
                 self.input_file
             ]
-            duration = float(subprocess.check_output(duration_cmd).decode().strip())
+            
+            duration = float(subprocess.check_output(
+                duration_cmd,
+                creationflags=CREATE_NO_WINDOW
+            ).decode().strip())
             
             if self.times > 0:
                 repeat = self.times
@@ -109,7 +115,8 @@ class VideoExtenderWorker(QThread):
                 ffmpeg_cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
-                universal_newlines=True
+                universal_newlines=True,
+                creationflags=CREATE_NO_WINDOW
             )
             
             for line in process.stdout:
